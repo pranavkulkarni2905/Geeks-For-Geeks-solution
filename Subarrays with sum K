@@ -1,0 +1,25 @@
+class Solution {
+    public int countKDifference(int[] nums, int k) {
+        
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int count=0;
+        for(int i:nums){
+            // count=count+map.getOrDefault(i-k,0)+map.getOrDefault(i+k,0);
+
+            // map.put(i,map.getOrDefault(i,0)+1);
+
+            // OR
+
+            if(map.containsKey(i-k)){
+                count+=map.get(i-k);
+            }
+            if(map.containsKey(i+k)){
+                count+=map.get(i+k);
+            }
+            map.put(i,map.getOrDefault(i,0)+1);
+
+        }
+        return count;
+
+    }
+}
