@@ -1,0 +1,30 @@
+
+class Solution{
+    static String findLargest(int n, int s){
+        // code here
+        StringBuilder ans=new StringBuilder();
+        
+        if(s==0 && n>1){
+            return "-1";
+        }
+        
+        for(int i=0;i<n;i++){
+            
+            if(s>=9){
+                ans.append('9');
+                s=s-9;
+            }else{
+                ans.append((char)(s+48)); // sum+0 ...48 is a ascii number of 0
+                s=0;
+            }
+        }
+        
+        if(s>0){
+            return "-1";
+        }
+        
+        return ans.toString();
+        
+        
+    }
+}
