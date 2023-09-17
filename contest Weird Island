@@ -1,0 +1,14 @@
+class Solution {
+    static String solve(int A, int B) {
+        //code here
+        if((A%2==0 && B%2==1) || (A%2==1 && B%2==0)){
+            return "Punished";
+        }
+        
+        if(A%2==0 && B%2==0){
+            return "He";
+        }else{
+            return "She";
+        }
+    }
+}
