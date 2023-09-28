@@ -1,0 +1,35 @@
+class Solution{
+    
+    public ArrayList<Integer> countFreq(int[] a, int n)  
+    { 
+  
+        // complete the function
+        ArrayList<Integer> res=new ArrayList<>();
+        
+        HashMap<Integer,Integer> map=new HashMap<>();
+        
+        for(int i:a){
+            
+            map.put(i,map.getOrDefault(i,0)+1);
+            
+        }
+        int pre=0;
+        Arrays.sort(a);
+        for(int i=0;i<n;i++){
+            
+           if(map.containsKey(a[i])){
+               
+               res.add(map.get(a[i])+pre);
+               
+               pre+=map.get(a[i]);
+               
+               map.remove(a[i]);
+           }
+            
+            
+        }
+        
+        return res;
+    }  
+      
+}
